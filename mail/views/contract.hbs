@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: poppins;
+            margin: 0.5% 0%;
+        }
+        h1{
+            margin-left: 2%;
+        }
+        .button{
+            text-decoration: none;
+            background: #047988;
+            color: #fff !important;
+            font-weight: bolder;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5%;
+        }
+        p{
+            font-size: 12px;
+            color: #5a848a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>New Contract Status detected</h1>
+    <h3>The contract of <u> {{name}}</u> will expire soon visit the link for more details  </h3>
+   <a class="button" href="{{url}}"> More Details</a>
+    <p> If you recived this email by mistake simply delete it.</p>
+</body>
+</html>
