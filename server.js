@@ -3,7 +3,6 @@ const app = require("./app");
 const Contract = require("./models/contract");
 const notify = require("./routes/notification");
 const moment = require("moment");
-const notifyMe = require("./routes/mobileRequestNotification");
 require("dotenv").config();
 // set the application port
 const normalizePort = (val) => {
@@ -51,9 +50,7 @@ server.on("listening", () => {
   const address = server.address();
   const bind = typeof address === "string" ? "pipe " + address : "port " + port;
   console.log("Listening on " + bind);
-  setInterval(() => {
-    notifyMe();
-  }, 1000);
+
   notify();
   setInterval(() => {
     notify();
