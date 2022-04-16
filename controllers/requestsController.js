@@ -3,6 +3,7 @@ const mail = require ('../mail/mail');
 const Request = require('../models/request');
 const moment = require('moment');
 const PDFAdmin = require('../pdf/adminValidation');
+const notifyMe = require('../routes/mobileRequestNotification');
 
 
 
@@ -52,6 +53,7 @@ exports.updateStatus = (req, res, next) => {
         if(err) return res.status(404).json({message: "Request not found"})
         else {
             mail.sendToEmployee(request.from);
+            notifyMe(request);
            // console.log(request)
             return res.status(200).json({message : "Request updated" , file : req.body.file})
         }

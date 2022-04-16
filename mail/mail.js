@@ -161,3 +161,7 @@ exports.sendNotif= (req, res, next) => {
     return console.log("Email sent!!!");
   });
 }
+exports.flutterNotification = (data) => {
+  console.log(data)
+  return data;
+}
